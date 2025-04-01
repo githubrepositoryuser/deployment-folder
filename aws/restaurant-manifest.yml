@@ -28,8 +28,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 9098
-      targetPort: 9098
+      port: 9091
+      targetPort: 9091
   selector:
     app: restaurantapp-v1
  
