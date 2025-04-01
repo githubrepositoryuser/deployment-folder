@@ -1,51 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: restaurantapp
+  name: restaurantapp-v1
   labels:
-    app: restaurantapp
+    app: restaurantapp-v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: restaurantapp
+      app: restaurantapp-v1
   template:
     metadata:
       labels:
-        app: restaurantapp
+        app: restaurantapp-v1
     spec:
       containers:
-        - name: restaurantapp
-          image: mukeshpnbe/restaurant-listing-service:20
+        - name: restaurantapp-v1
+          image: mukeshpnbe/restaurant-listing-service:22
           imagePullPolicy: Always
           ports:
             - containerPort: 9091
-          env:
-            - name: SPRING_DATASOURCE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: mysql-username
-            - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: mysql-password
-            - name: SPRING_DATASOURCE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: restaurantdb_url
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: restaurant-service
+  name: restaurant-service-v1
 spec:
   ports:
     - protocol: TCP
-      port: 9091
-      targetPort: 9091
+      port: 9098
+      targetPort: 9098
   selector:
-    app: restaurantapp
+    app: restaurantapp-v1
  
