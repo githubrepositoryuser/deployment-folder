@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: configmap
 data:
-  restaurantdb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669?enabledTLSProtocols=TLSv1.2
+  restaurantdb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669?useSSL=false
   foodcataloguedb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669
   userdb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669
   orderdb_url: mongodb+srv://admin:admin@atlas-cluster.ega88z7.mongodb.net/?retryWrites=true&w=majority
