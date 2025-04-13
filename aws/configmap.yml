@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: configmap
 data:
-  restaurantdb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669?useSSL=false
-  foodcataloguedb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669
-  userdb_url: jdbc:mysql://sql12.freesqldatabase.com:3306/sql12770669
+  restaurantdb_url: jdbc:h2:~/restaurantdb;DB_CLOSE_ON_EXIT=FALSE
+  foodcataloguedb_url: jdbc:h2:~/foodcatalogdb;DB_CLOSE_ON_EXIT=FALSE
+  userdb_url: jdbc:h2:~/userdb;DB_CLOSE_ON_EXIT=FALSE
   orderdb_url: mongodb+srv://admin:admin@atlas-cluster.ega88z7.mongodb.net/?retryWrites=true&w=majority
   eureka_service_address: http://eureka-0.eureka-service:8761/eureka
 
