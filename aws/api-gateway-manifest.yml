@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: apigateway
-          image: mukeshpnbe/food-catalogue-service:2
+          image: mukeshpnbe/food-catalogue-service:3
           imagePullPolicy: Always
           ports:
             - containerPort: 9090
