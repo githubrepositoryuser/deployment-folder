@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: userapp
-          image: mukeshpnbe/user-service:latest
+          image: mukeshpnbe/user-service:2
           imagePullPolicy: Always
           ports:
             - containerPort: 9093
