@@ -18,6 +18,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 9094
+          env:
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Djdk.tls.client.protocols=TLSv1.2"  
 ---
 apiVersion: v1
 kind: Service
